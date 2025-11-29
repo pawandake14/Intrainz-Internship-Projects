@@ -1,0 +1,328 @@
+* {
+  /* Remove default margins and padding from all elements */
+  margin: 0;
+  padding: 0;
+  /* Use border-box for more intuitive sizing */
+  box-sizing: border-box;
+}
+
+/* Body styling - Dark professional theme */
+body {
+  /* Set background to dark gradient for modern look */
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  /* Use system fonts for better performance and consistency */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  /* Center content and ensure full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Add padding for mobile responsiveness */
+  padding: 20px;
+}
+
+/* Main calculator container */
+.calculator-container {
+  /* Set maximum width for better readability on large screens */
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Header section styling */
+.calculator-header {
+  /* Center align all text in header */
+  text-align: center;
+  /* Add spacing below header */
+  margin-bottom: 30px;
+}
+
+/* Main heading */
+.calculator-header h1 {
+  /* Large, bold heading text */
+  font-size: 48px;
+  font-weight: 700;
+  /* White text color for contrast against dark background */
+  color: #ffffff;
+  /* Add spacing below heading */
+  margin-bottom: 8px;
+  /* Smooth letter spacing for professional look */
+  letter-spacing: -0.5px;
+}
+
+/* Subtitle text */
+.calculator-header .subtitle {
+  /* Smaller, lighter text for subtitle */
+  font-size: 14px;
+  color: #94a3b8;
+  /* Smooth appearance */
+  font-weight: 400;
+}
+
+/* Calculator card - Main container for calculator UI */
+.calculator-card {
+  /* Gradient background from light to dark slate */
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  /* Rounded corners for modern appearance */
+  border-radius: 24px;
+  /* Add shadow for depth and elevation */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 1px rgba(255, 255, 255, 0.1) inset;
+  /* Add padding for internal spacing */
+  padding: 24px;
+  /* Add border for subtle definition */
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+/* Display screen styling */
+.display-screen {
+  /* Gradient background for display area */
+  background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  /* Rounded corners matching card theme */
+  border-radius: 16px;
+  /* Add padding for text spacing */
+  padding: 24px;
+  /* Add spacing below display */
+  margin-bottom: 24px;
+  /* Add subtle border */
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  /* Shadow for depth */
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Operation display - shows current operation */
+.operation-display {
+  /* Small text for operation indicator */
+  font-size: 14px;
+  /* Muted color for secondary information */
+  color: #64748b;
+  /* Right align for better readability */
+  text-align: right;
+  /* Add spacing below operation display */
+  margin-bottom: 8px;
+  /* Minimum height to prevent layout shift */
+  min-height: 20px;
+}
+
+/* Main display - shows current number or result */
+.main-display {
+  /* Large text for primary information */
+  font-size: 56px;
+  /* Light font weight for modern appearance */
+  font-weight: 300;
+  /* White text for contrast */
+  color: #ffffff;
+  /* Right align numbers for standard calculator behavior */
+  text-align: right;
+  /* Allow text to wrap on smaller screens */
+  word-wrap: break-word;
+  /* Prevent text overflow */
+  overflow-wrap: break-word;
+}
+
+/* Button grid - Flexbox layout for responsive buttons */
+.button-grid {
+  /* Use CSS Grid for precise button layout */
+  display: grid;
+  /* 4 columns for calculator layout */
+  grid-template-columns: repeat(4, 1fr);
+  /* Gap between buttons for spacing */
+  gap: 12px;
+}
+
+/* Base button styling */
+.btn {
+  /* Padding for comfortable button size */
+  padding: 16px;
+  /* Rounded corners for modern look */
+  border-radius: 12px;
+  /* Remove default button border */
+  border: none;
+  /* White text color */
+  color: #ffffff;
+  /* Bold font for readability */
+  font-weight: 600;
+  /* Large font size for easy tapping on mobile */
+  font-size: 18px;
+  /* Cursor pointer to indicate clickability */
+  cursor: pointer;
+  /* Smooth transitions for interactive feedback */
+  transition: all 0.2s ease-in-out;
+  /* Prevent text selection on double-click */
+  user-select: none;
+  /* Ensure button takes full grid cell */
+  width: 100%;
+  /* Minimum height for comfortable touch targets */
+  min-height: 56px;
+  /* Display as flex for content centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover effect for all buttons - slight scale and brightness */
+.btn:hover {
+  /* Slightly brighten on hover */
+  filter: brightness(1.1);
+  /* Subtle scale effect */
+  transform: scale(1.02);
+}
+
+/* Active state - button press feedback */
+.btn:active {
+  /* Scale down slightly when pressed */
+  transform: scale(0.98);
+  /* Darken slightly on press */
+  filter: brightness(0.95);
+}
+
+/* Number buttons - Standard slate color */
+.btn-number {
+  /* Dark slate background for number buttons */
+  background: linear-gradient(180deg, #475569 0%, #334155 100%);
+  /* Subtle shadow for depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Zero button - Spans 2 columns for larger button */
+.btn-zero {
+  /* Use grid column spanning to make button wider */
+  grid-column: span 2;
+}
+
+/* Operator buttons - Orange color for distinction */
+.btn-operator {
+  /* Orange gradient background */
+  background: linear-gradient(180deg, #ea580c 0%, #c2410c 100%);
+  /* Shadow for elevation */
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+
+/* Clear button - Red for destructive action */
+.btn-clear {
+  /* Red gradient for clear/reset action */
+  background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
+  /* Shadow matching color theme */
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+  /* Span 2 columns for wider button */
+  grid-column: span 2;
+}
+
+/* Backspace button - Slate color */
+.btn-backspace {
+  /* Slate background matching number buttons */
+  background: linear-gradient(180deg, #475569 0%, #334155 100%);
+  /* Subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Decimal button - Slate color */
+.btn-decimal {
+  /* Slate background */
+  background: linear-gradient(180deg, #475569 0%, #334155 100%);
+  /* Subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Equals button - Green for positive action */
+.btn-equals {
+  /* Green gradient for equals/confirm action */
+  background: linear-gradient(180deg, #16a34a 0%, #15803d 100%);
+  /* Shadow matching color theme */
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+/* Square button - Blue for special operations */
+.btn-square {
+  /* Blue gradient for square operation */
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+  /* Shadow matching color theme */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  /* Span 2 columns for wider button */
+  grid-column: span 2;
+}
+
+/* Modulo button - Purple for special operations */
+.btn-modulo {
+  /* Purple gradient for modulo operation */
+  background: linear-gradient(180deg, #a855f7 0%, #9333ea 100%);
+  /* Shadow matching color theme */
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+  /* Span 2 columns for wider button */
+  grid-column: span 2;
+}
+
+/* Footer section */
+.calculator-footer {
+  /* Center align footer text */
+  text-align: center;
+  /* Add spacing above footer */
+  margin-top: 24px;
+}
+
+/* Footer text */
+.calculator-footer p {
+  /* Small font size for footer information */
+  font-size: 12px;
+  /* Muted color for secondary information */
+  color: #64748b;
+  /* Light font weight */
+  font-weight: 400;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - Mobile Optimization
+   ======================================== */
+
+/* Media query for smaller screens (mobile devices) */
+@media (max-width: 480px) {
+  /* Adjust header font size for mobile */
+  .calculator-header h1 {
+    font-size: 36px;
+  }
+
+  /* Reduce padding on mobile */
+  .calculator-card {
+    padding: 16px;
+  }
+
+  /* Reduce display padding on mobile */
+  .display-screen {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Reduce main display font size on mobile */
+  .main-display {
+    font-size: 40px;
+  }
+
+  /* Reduce button grid gap on mobile */
+  .button-grid {
+    gap: 8px;
+  }
+
+  /* Reduce button padding on mobile */
+  .btn {
+    padding: 12px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY - Focus States
+   ======================================== */
+
+/* Focus state for keyboard navigation */
+.btn:focus {
+  /* Add outline for keyboard navigation visibility */
+  outline: 2px solid #3b82f6;
+  /* Add offset to outline */
+  outline-offset: 2px;
+}
+
+/* Remove focus outline on mouse click (but keep for keyboard) */
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
