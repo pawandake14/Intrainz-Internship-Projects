@@ -220,3 +220,5 @@ This project is created for educational purposes as part of a web development mi
 ## Author
 
 Created as a professional web development minor project demonstrating core HTML, CSS, and JavaScript concepts.
+
+Project completed at Intrainz internship
